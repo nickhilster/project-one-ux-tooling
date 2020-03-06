@@ -8,3 +8,20 @@ body {
   padding: 0 1em;
   margin: 1em 0;
 }
+
+.progress {
+  background-color: limegreen;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 1em;
+  overflow: hidden;
+}
+
+.dot {
+  height: 3px;
+  width: 3px;
+  position: fixed;
+  background-color: red;
+}
