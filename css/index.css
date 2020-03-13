@@ -4,19 +4,46 @@ body {
   color: #222;
 }
 
+h1 {
+  background-color: tomato;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.fixed {
+  position: fixed;
+  font-size: 1em;
+  margin: 0;
+  width: 100%;
+}
+
+
+.heading {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.show {
+  opacity: 1;
+}
+
 .story {
   padding: 0 1em;
   margin: 1em 0;
 }
 
 .progress {
-  background-color: limegreen;
+  /* background-color: limegreen; */
+  background: linear-gradient(90deg, rgba(140,185,25,1) 0%, rgba(0,212,255,1) 100%);
+  background-size: 300vw;
+  background-position: -200vw;
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 0;
   height: 1em;
   overflow: hidden;
+  opacity: 0;
 }
 
 .dot {
