@@ -1,4 +1,4 @@
-# PROJECT: UX TOOLING
+# PROJECT: UX TOOLING - Group: Nikhil & Tanvi
 **CREATING DROP-IN UI COMPONENTS AND TOOLS TO IMPROVE THE USER EXPERIENCE OF AN ARTICLE**
 
 ---
@@ -55,13 +55,13 @@ Use your own experiences to design and develop a component or tool that will imp
 You will be assessed on the following criteria:
 
 - **Documentation**
-  - **Research**: keep a README.md file with inspirations, sketches, drawings, analysis of potential exceptions, pros/cons of each solution, etc
+  - **Research**: keep a README.md file with inspirations. Keep things like: sketches, drawings, analysis of potential exceptions, pros/cons of each solution, etc
   - **Code**: assess the problem, break down into tasks, document all functions, listeners, processes
 - **User interface**: colours, spacing, overall aesthetic/style
 - **User experience**: usability, value added, seamless integration
 - **Code structure**: indentation, names (variables and functions), readability, best practices
 - **Portability**: ease of scaled or the ability to be dropped into any website
-- **Collaboration**: distribution of work, research, management of code through git (including "Issues")
+- **Collaboration**: distribution of work, research, management of code through git
 
 ### Expected grade ranges are as follows:
 - 0-49%: Does not meet the project minimum requirements for all or some deliverables
