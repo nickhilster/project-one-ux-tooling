@@ -194,7 +194,7 @@ body {
 }
 
 .contactinfo h2 :nth-child(1){
-  padding: 5em 0 0.2em 0;
+  padding: 0em 0 0.2em 0;
 }
 
 .contactform{
@@ -205,4 +205,17 @@ body {
 
 .active{
   color: white;
+}
+
+a{
+  color: aqua;
+  text-decoration: none;
+}
+
+.past::after {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: red;
 }
