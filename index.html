@@ -61,7 +61,7 @@
             </ul>
         </div>
         <ul class="menu">
-            <li> <a href="#demo">My Journey</a> </li>
+            <li> <a href="#demo" class="active">My Journey</a> </li>
             <li> <a href="#handbook">Tourist Handbook</a> </li>
             <li> <a href="#contactus">Contact Us </a></li>
         </ul>
@@ -127,9 +127,9 @@
                 <h2> <a href="#demo"> BACK TO TOP</a></h2>
             </section>
             
-        </div>
+        </div>x
         <section class="contactform">
-            <h2 href="">WANT TO CHAT</h2>
+            <h2><a href=""  onclick="openForm()">WANT TO CHAT</a></h2>
         </section>
     
 <!-- chat begins -->
@@ -138,10 +138,10 @@
 
 <div class="chat-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+    <h1 id="">Chat</h1>
 
     <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+    <textarea placeholder="Type message.." name="msg" required  ></textarea>
 
     <button type="submit" class="btn">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -149,13 +149,7 @@
 </div>
 
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
 </script>
 
 <!-- chat ends -->

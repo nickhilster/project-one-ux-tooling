@@ -1,86 +1,84 @@
-# PROJECT: UX TOOLING
-**CREATING DROP-IN UI COMPONENTS AND TOOLS TO IMPROVE THE USER EXPERIENCE OF AN ARTICLE**
 
----
+PROJECT: UX TOOLING
+Group: Tanvi Karwa + Nikhil Khedkar
 
-## Overview
+Note: All group communication was conducted over Discord Video/Screen sharing for the ease of collaboration and helping each other out to troubleshoot issues
 
-Design and develop drop-in components or tool that can be used to augment the standard UI and improve the overall experience of a user. 
+Moodboard and Wireframe available in the pdf document
 
-You will complete this project in two phases:
+While we looked at many amazing websites out there for inspiration and reference below are a select few that inspired us the most.
 
-1. Design and prototype the components/tools outlined (A to D)
-2. Develop a functional version of each component/tool designed
+https://beauvoir.ca/en/ (Primary inspiration)
 
-## Setup
+https://www.rickandmorty.com/
 
-To being, using HTML and CSS, write and style a document of content that's long enough to allow the browser to scroll at least five times longer than the height of the window (approximately) when using the browser's default font size.
+https://www.davidebaratta.com/projects/
 
+https://the-goonies.webflow.io/ 
 
-## Practice Examples
+https://dogstudio.co/
 
-### Practice 1: Scroll progress indicator
+https://toyfight.co/who/
 
-**Goal:** Create a visual progress indicator to show a user how much progress has been made for a given article.
+http://www.marlousderoode.nl/
 
-### Practice 2: Progress title
+https://circus-inc.com/en/value/
 
-**Goal:** Put the document's `<h1>` into the fixed top `.bar` when the heading has been scrolled off the page.
-
-### Practice 3: Word count
-
-**Goal:** Count the total number of words in the article. Determine the number of words per minute that you read. Combine these values to show the user how many minutes this article might take to read. "5 minutes". 
+https://activetheory.net/home
 
 
-## Project Deliverables
 
-### A) Landmarks, orientation and scroll-spies
 
-Design a way to represent a user's progress through a long article, such that they can easily view the article's outline and move a desired portion of the document into the viewport at any time. An example of a "srollspy" (see the "Table of Contents" in a desktop browser): https://create.arduino.cc/projecthub/MoritzDornseifer/iot-cloud-enabled-alarm-clock-1e5119
+Design Points to consider:
 
-### B) Content reveal (carousel, slides, tabbed component, etc)
+Homepage opens with image carousel
+Scroll spy/landmark bar on the right-side
+Scroll spy stays on top of all other layers
+Keep the images ‘fresh’ and ‘vibrant’ referencing travel and nature
+Horizontal scrolling after the homepage is scrolled
+Load new content as the user reaches the end of the last page
 
-Design a component that can guide a user though content that is split into multiple parts. The content may be controlled by the user, the component itself (a timer, perhaps), or other. The content may be of any type or medium (text content, images, videos, etc). An example of a slide deck style survey: http://thespeakerlab.typeform.com/to/mKgF8q
 
-### C) New content engagement (aka, "infinite" content)
 
-When a user reached the bottom of a document, maintain the fluidity of the experience and engagement by loading new content. This UX upgrade should focus on responsible engagement. Ensure the user is made aware of new content (either upcoming, or already loading) while promoting a seamless, low-friction, ethically responsible experience.
+Code	
 
-### D) One component or tool of your choosing
+Carousel
+Carousels will require the use of an id for carousel controls.
+Create a unique input field for every slide with a unique ID which will be connected with a label.
+Define options like number of slides and transition speed. The speed should be defined in ‘seconds’
 
-Use your own experiences to design and develop a component or tool that will improve the experience of a user reading or viewing a website. Consider looking for inspirations on sites like Dribbble (or others) that demonstrate UI animations or related experience upgrades.
 
-## Assessment variables and considerations
+Horizontal scrolling
+Create containers and then children divs inside of it. These divs will scroll horizontally.
+Use the function ‘flex-wrap’. Set overflow: hidden and use the ‘grid-template-columns’ function alignment.
+ Turn off vertical scrolling (overflow-y) and enable horizontal scrolling (overflow-x). Then with each card set it to display ‘flex’.
+Calculate the height  and width of the window
+Calculate the total height and width of the document
+Calculate maximum height by subtracting window height from the doc height.
+Calculate maximum width by subtracting window width from the doc width.
+Round up the final calculated answer using the math.round function.
 
-You will be assessed on the following criteria:
 
-- **Documentation**
-  - **Research**: keep a README.md file with inspirations. Keep things like: sketches, drawings, analysis of potential exceptions, pros/cons of each solution, etc
-  - **Code**: assess the problem, break down into tasks, document all functions, listeners, processes
-- **User interface**: colours, spacing, overall aesthetic/style
-- **User experience**: usability, value added, seamless integration
-- **Code structure**: indentation, names (variables and functions), readability, best practices
-- **Portability**: ease of scaled or the ability to be dropped into any website
-- **Collaboration**: distribution of work, research, management of code through git
 
-### Expected grade ranges are as follows:
-- 0-49%: Does not meet the project minimum requirements for all or some deliverables
-- 50-64%: Student work only meets the minimum requirement of all deliverables
-- 65-79%: Work quality meets all requirements and is on par with expectations based on the topics covered
-- 80%+: Student demonstrates the ability to improve efficiency and execution through the implementation of creative solutions and topics that go beyond topics covered in class
+Landmark/Scrollspy: 
 
-## Student Q&A
+Add data-spy="scroll" to the body as that would be the scrollable area.
 
-[Submit your questions as "Issues" (click)](../../issues). This section will be continually updated. A few questions answered:
 
-- *Does the content of the article matter?*
-  - It should be unique and interesting, with images, formatting, fonts, etc. Try not to spend more than an hour or two (total) writing and styling it. To start, just use any content to get up and running quickly.
-- *What article should load when we get to the bottom of the page? (Deliverable C)*
-  - You will just reload the same content with a new heading.
-- *Can I combine two parts into one component?*
-  - Absolutely
-- *Does this have to be responsive to small screens (mobile)?*
-  - Ideally. The more responsive, the better the grade.
+Add data-target attribute with a value of the id or the class name of the navigation bar (.navbar)
+All the scrollable elements must match the ID of the links inside the navbar's list items. For eg: <div id="section1"> matches <a href="#section1">
+
+Can add optional ‘data-offset’ to specify the number of pixels to offset from top when calculating the position of scroll. Use this to set the position if the active state of the landmark changes too soon or too early when jumping to the scrollable elements.
+Chat App:
+Add HTML while using a <form> element to process the input.
+
+Add the CSS and styling based on the style guide colors
+
+Add the Javascript to toggle the chat form open-close on click
+
+
+
+
 
 
 

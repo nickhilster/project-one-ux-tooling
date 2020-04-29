@@ -94,56 +94,34 @@ carouselDots.forEach((dot, index) => {
     });
 });
 
-let $menu = document.querySelector('.menu')
-// let infoForElement = ''	
 
-let theStateOfThings = () => {
 
-    let winH = document.documentElement.clientHeight
-    let winW = document.documentElement.clientWidth
-    let docH = document.documentElement.scrollHeight
-    let docW = document.documentElement.scrollWidth
-    let winY = window.scrollY
-    let winX = window.scrollX
-    let maxY = docH - winH
-    let maxX = docW - winW
-    let pctY = Math.round(winY / Math.max(maxY, 1) * 100)
-    let pctX = Math.round(winX / Math.max(maxX, 1) * 100)
-    
+const sections=document.querySelectorAll('.fullviewport');
+const sectionsPos={};
 
-    let checkOneSection = ($sec) => {
-        let fromD = $sec.offsetTop
-        let top = $sec.getBoundingClientRect().top
-        let bottom = $sec.getBoundingClientRect().bottom
+sections.forEach((section)=>{
+  sectionsPos[section.id]=section.offsetTop;
+});
 
-        if (top < winH && bottom > 0) {
-            console.log('above viewport')
-            console.log($sec)
-        	// infoForElement += `<li class="past" style="opacity:${bottom / winH};">${$sec.querySelector('h2').textContent}</li>`
-            // $menu.querySelector(li)
-            // $menu.classList.add('current')
-            // $menu.classList.add('.active');
-        }
-        else {
-            // infoForElement += `<li><a href="#${theId}">${$sec.querySelector('h2').textContent}</a></li>`
-        }
-
+window.onscroll=()=>{
+  var scrollPos=document.documentElement.scrollTop || document.body.scrollTop;
+  for(var id in sectionsPos){
+    if(sectionsPos[id]<=scrollPos+100){
+      var style=getComputedStyle(document.querySelector(`.fullviewport[id*=${id}]`))
+      var color=style.backgroundColor;
+      console.log(color);
+      document.querySelector('.active').style.color="#ffffff";
+       document.querySelector('.active').classList.remove('active'); document.querySelector(`a[href*=${id}]`).classList.add('active');
+      document.querySelector(`a[href*=${id}]`).style.color=color;
     }
-
-    document.querySelectorAll('.fullviewport').forEach(checkOneSection)
-
+  }
 }
 
-window.addEventListener('load', theStateOfThings)
-window.addEventListener('scroll', theStateOfThings)
-window.addEventListener('resize', theStateOfThings)
 
-// document.querySelector('.menu').innerHTML = 
-// `<li>
-// <ol>${infoForElement}</ol>
-// </li>`
 
 const $story = document.querySelector('.handbook')
+
+                                                                                
 let windW = document.documentElement.getBoundingClientRect().width
 let windH = document.documentElement.getBoundingClientRect().height
 let storW = $story.scrollWidth
@@ -156,11 +134,21 @@ document.documentElement.style.height = `${storyH + storyW - windW}px`;
 
 window.addEventListener('scroll', (event) => {
     // let winH = document.documentElement.clientHeight
+    {
     let top = $story.getBoundingClientRect().top
     let bottom = $story.getBoundingClientRect().bottom
 
-     {
-        $story.style.transform = `translateX(${window.scrollY * -1}px)`
+   {
+                $story.style.transform = `translateX(${window.scrollY * -1}px)`
         }
+    }
 })
 
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
